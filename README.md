@@ -10,59 +10,16 @@
 - Saves responses in a pretty-printed JSON format
 - Supports proxies
 
-## Installation
-
-1. Clone the repository:
-
-    ```sh
-    git clone https://github.com/yourusername/bytepost.git
-    cd bytepost
-    ```
-
-2. Install the dependencies:
-
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-## Usage
-
-### Example Usage
-
-import asyncio
+## Example Usage
+```py
 from bytepost import BytePost
 
-url = "https://jsonplaceholder.typicode.com/posts"
-payload = {"title": "foo", "body": "bar", "userId": 1}
-proxy = None  # Example does not use a proxy
+payload = {"content": "@everyone bytepost is js better", "username": "BytePost", "icon_url": "https://media.discordapp.net/attachments/1257622093692932127/1258043752031719505/image.png?ex=66869c0b&is=66854a8b&hm=49653b55428e352a5dae5962fb5fe37e6eeba26a9a8824ea3b758996ff817274&=&format=webp&quality=lossless&width=490&height=104"}
+webhook = "https://discord.com/api/webhooks/1258043203719004322/Yj7rpl7-TaZsHT_7zwyhbn9vPFTs3hUWzuBMeayzLuk2iVVQQYM8NPdMK5XT9Tt-UJic"
 
-# Asynchronous POST request using aiohttp
-async def main():
-    bytepost = BytePost('aiohttp', 'post', url, payload)
-    await bytepost.async_index()
+def index(webhook, payload):
+    post = BytePost(method="tls_client", http_method="post", url=webhook, payload=payload)
+    post.index()
 
-# Synchronous POST request using requests
-bytepost = BytePost('requests', 'post', url, payload)
-bytepost.index()
-
-# Synchronous POST request using tls_client
-bytepost = BytePost('tls_client', 'post', url, payload)
-bytepost.index()
-
-# Run the async example
-asyncio.run(main())
-
-# Example of a synchronous GET request using requests
-bytepost_get = BytePost('requests', 'get', url)
-bytepost_get.index()
-
-# Example of an asynchronous GET request using aiohttp
-async def main_get():
-    bytepost = BytePost('aiohttp', 'get', url)
-    await bytepost.async_index()
-
-asyncio.run(main_get())
-
-# Example of a synchronous GET request using tls_client
-bytepost_tls_get = BytePost('tls_client', 'get', url)
-bytepost_tls_get.index()
+index()
+```
