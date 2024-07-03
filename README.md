@@ -23,3 +23,6 @@ def index(webhook, payload):
 
 index()
 ```
+
+## Example Response
+![image](https://github.com/bytepulze/BytePost/assets/153377701/6e6ef326-3257-4656-8353-8031e0f95170)
