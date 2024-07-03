@@ -70,7 +70,7 @@ class BytePost:
         except json.JSONDecodeError:
             data = text
         self.save_data(data, f'{self.method}_{self.http_method}_aiohttpresult.json')
-        print(Fore.GREEN + f"{self.http_method.upper()} aiohttp response saved to {self.method}_{self.http_method}_aiohttpresult.json")
+        print(f"{Fore.LIGHTBLACK_EX}[{Fore.GREEN}SUCCESS{Fore.LIGHTBLACK_EX}] {self.http_method.upper()}{Fore.RESET} Process Was Finished Successfully, URL Response Was Saved Into {Fore.LIGHTBLACK_EX}{self.method}_{self.http_method}_aiohttpresult.json")
 
     def process_requests(self):
         text = self.requests_request()
@@ -79,7 +79,7 @@ class BytePost:
         except json.JSONDecodeError:
             data = text
         self.save_data(data, f'{self.method}_{self.http_method}_requestsresult.json')
-        print(Fore.GREEN + f"{self.http_method.upper()} requests response saved to {self.method}_{self.http_method}_requestsresult.json")
+        print(f"{Fore.LIGHTBLACK_EX}[{Fore.GREEN}SUCCESS{Fore.LIGHTBLACK_EX}] {self.http_method.upper()}{Fore.RESET} Process Was Finished Successfully, URL Response Was Saved Into {self.method}_{self.http_method}_requestsresult.json")
 
     def process_tls_client(self):
         text = self.tls_client_request()
@@ -88,21 +88,11 @@ class BytePost:
         except json.JSONDecodeError:
             data = text
         self.save_data(data, f'{self.method}_{self.http_method}_tlsclientresult.json')
-        print(Fore.GREEN + f"{self.http_method.upper()} tls_client response saved to {self.method}_{self.http_method}_tlsclientresult.json")
-
-    async def async_index(self):
-        if self.method == 'aiohttp':
-            await self.process_aiohttp()
-        else:
-            raise ValueError("Unsupported method for async_index. Use 'aiohttp'.")
+        print(f"{Fore.LIGHTBLACK_EX}[{Fore.GREEN}SUCCESS{Fore.LIGHTBLACK_EX}] {self.http_method.upper()}{Fore.RESET} Process Was Finished Successfully, URL Response Was Saved Into {self.method}_{self.http_method}_tlsclientresult.json")
 
     def index(self):
         if self.method == 'aiohttp':
-            try:
-                asyncio.get_running_loop()
-                asyncio.ensure_future(self.process_aiohttp())
-            except RuntimeError:
-                asyncio.run(self.process_aiohttp())
+            asyncio.run(self.process_aiohttp())
         elif self.method == 'requests':
             thread = Thread(target=self.process_requests)
             thread.start()
