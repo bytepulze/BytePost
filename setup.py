@@ -12,7 +12,7 @@ DESCRIPTION = 'BytePost is a versatile Python module for sending HTTP requests'
 LONG_DESCRIPTION = 'BytePost is a versatile Python module for sending HTTP requests using aiohttp, requests, and tls_client. It supports multiple HTTP methods and saves responses in a pretty-printed JSON format.'
 
 setup(
-    name="vidstream",
+    name="bytepost",
     version=VERSION,
     author="BytePulze",
     author_email="<eth2complicated@gmail.com>",
