@@ -1,0 +1,5 @@
+tls_client
+aiohttp
+requests
+colorama
+asyncio
