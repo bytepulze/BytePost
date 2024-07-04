@@ -1,5 +1,3 @@
-import bytepost
-from bytepost import BytePost
 import tls_client
 import requests
 import aiohttp
