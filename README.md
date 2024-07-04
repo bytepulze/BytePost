@@ -25,4 +25,4 @@ index()
 ```
 
 ## Example Response
-![image](https://github.com/bytepulze/BytePost/assets/153377701/6b9dbcd4-ba9c-4fc2-ae96-4e5438eb647d)
+![image](https://github.com/bytepulze/BytePost/assets/153377701/84905295-2ac7-4af0-ab6b-26926416e19b)
