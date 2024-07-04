@@ -20,7 +20,7 @@ setup(
     long_description_content_type="text/markdown",
     long_description=long_description,
     packages=find_packages(),
-    install_requires=['requests', 'aiohttp', 'tls_client', 'colorama', 'threading', 'asyncio'],
+    install_requires=['requests', 'aiohttp', 'tls_client', 'colorama', 'asyncio'],
     keywords=['python', 'request', 'http', 'http request'],
     classifiers=[
         "Development Status :: 1 - Planning",
