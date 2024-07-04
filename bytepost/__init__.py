@@ -1,1 +1,1 @@
-from bytepost import bytepost
+from bytepost import BytePost
